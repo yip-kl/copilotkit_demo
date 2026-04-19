@@ -24,7 +24,7 @@ const AgenticChat: React.FC<AgenticChatProps> = ({ params }) => {
   return (
     <CopilotKit
       runtimeUrl={`/api/copilotkit`}
-      showDevConsole={false}
+      enableInspector={true}
       agent={agent}
     >
       <Chat />

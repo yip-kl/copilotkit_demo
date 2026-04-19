@@ -13,7 +13,7 @@ cd backend
 
 # Create and activate virtual environment
 uv venv
-source venv/Script/activate
+source .venv/Scripts/activate
 
 # Install dependencies
 uv run
@@ -30,7 +30,7 @@ npm install
 Start the backend by the below, the LangGraph AGUI Agent will be reachable on http://localhost:8123
 ```
 cd backend
-python main.py
+uv run main.py
 ```
 
 For testing, we can issue a `POST` request to the endpoint
