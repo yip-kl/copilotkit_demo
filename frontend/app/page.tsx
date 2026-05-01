@@ -39,12 +39,8 @@ const Chat = () => {
   useConfigureSuggestions({
     suggestions: [
       {
-        title: "Weather in San Francisco",
-        message: "What's the weather like in San Francisco?",
-      },
-      {
-        title: "Flight Info for OS 87",
-        message: "Get info for flight OS 87",
+        title: "Is it a good idea to visit New York on Apr 15?",
+        message: "Is it a good idea to visit New York on Apr 15?",
       }
     ],
     available: "always",

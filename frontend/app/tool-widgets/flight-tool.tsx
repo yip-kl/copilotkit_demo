@@ -10,18 +10,18 @@ type FlightInfo = {
   origin: string;
   destination: string;
   departureTime: string;
-  status: string;
+  flight_status: string;
   arrivalTime: string;
 };
 
 const FALLBACK_FLIGHT: FlightInfo = {
   flightNumber: "OS 87",
-  date: "2025-12-15",
+  date: "2026-04-15",
   origin: "Vienna",
   destination: "New York",
-  departureTime: "2025-12-15T10:15:00Z",
-  status: "On Time",
-  arrivalTime: "2025-12-15T14:30:00Z",
+  departureTime: "2026-04-15T10:15:00Z",
+  flight_status: "On Time",
+  arrivalTime: "2026-04-15T14:30:00Z",
 };
 
 export function useFlightRenderTool() {
@@ -33,7 +33,7 @@ export function useFlightRenderTool() {
       origin: z.string(),
       destination: z.string(),
       departureTime: z.string(),
-      status: z.string(),
+      flight_status: z.string(),
       arrivalTime: z.string(),
     }),
     render: ({ args, result, status }: any) => {
@@ -127,7 +127,7 @@ function FlightCard({ data }: { data: FlightInfo }) {
 
           <div className="flex flex-col items-center">
             <p className="text-xs text-slate-500">Status</p>
-            <p className="text-sm font-medium text-emerald-600">{data.status}</p>
+            <p className="text-sm font-medium text-emerald-600">{data.flight_status}</p>
           </div>
 
           <div className="flex flex-col items-end">

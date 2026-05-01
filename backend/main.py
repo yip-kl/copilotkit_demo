@@ -21,6 +21,7 @@ def get_weather(location: str):
     """
     Get the weather for a given location.
     """
+    # Wait for 3 seconds for demonstration purposes
     time.sleep(3)
     return {
         "temperature": 20,
@@ -38,18 +39,22 @@ def get_flight(flight_number: str):
     time.sleep(3)
     return {
         "flightNumber": "OS 87",
-        "date": "2025-12-15",
+        "date": "2026-04-15",
         "origin": "Vienna",
         "destination": "New York",
-        "departureTime": "2025-12-15T10:15:00Z",
-        "status": "On Time",
-        "arrivalTime": "2025-12-15T14:30:00Z",
+        "departureTime": "2026-04-15T10:15:00Z",
+        "flight_status": "On Time",
+        "arrivalTime": "2026-04-15T14:30:00Z",
     }
 
 graph = create_agent(
     model=ChatOpenRouter(model="google/gemma-4-31b-it"),
     tools=[get_weather, get_flight],
-    system_prompt="You are a helpful assistant",
+    system_prompt="""
+    You are a helpful trip planner, when user asks if a trip is a good idea,
+    you check the weather and flight information for the trip and give a recommendation.
+    Assume the user is from Vienna and he plans to take the fight OS 87
+    """,
     checkpointer=MemorySaver(),
 )
 

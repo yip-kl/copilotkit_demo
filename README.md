@@ -46,7 +46,7 @@ For testing, we can issue a `POST` request to the endpoint
         {
             "id": "190645d3-0f62-4e43-9020-f1f4f41af212",
             "role": "user",
-            "content":"How's the weather in Tokyo today?"
+            "content":"Is it a good idea to visit New York on Apr 15?"
         }
     ]
 }
