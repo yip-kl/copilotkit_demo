@@ -8,6 +8,7 @@ from langgraph.checkpoint.memory import MemorySaver
 from langchain.agents import create_agent
 import uvicorn
 from langchain_openrouter import ChatOpenRouter
+import time
 
 # Define OPENROUTER_API_BASE and OPENROUTER_API_KEY in your .env file
 load_dotenv()
@@ -20,6 +21,7 @@ def get_weather(location: str):
     """
     Get the weather for a given location.
     """
+    time.sleep(3)
     return {
         "temperature": 20,
         "conditions": "sunny",
@@ -33,6 +35,7 @@ def get_flight(flight_number: str):
     """
     Get flight information.
     """
+    time.sleep(3)
     return {
         "flightNumber": "OS 87",
         "date": "2025-12-15",
